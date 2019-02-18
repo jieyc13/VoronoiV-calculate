@@ -1,0 +1,14 @@
+#!/bin/bash 
+#PBS -N channel-10
+#PBS -l walltime=100:00:00
+#PBS -l select=1:ncpus=1:mpiprocs=1
+#PBS -m abe
+#PBS -A nn9191k
+
+
+module load matlab
+
+# Run my program
+cd $PBS_O_WORKDIR
+
+matlab -nodisplay -r "PostVoronoiVOutput"  -> info.log
